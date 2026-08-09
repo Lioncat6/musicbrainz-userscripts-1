@@ -76,6 +76,7 @@ function wikimediaImageURL(wikimediaCommonsURL){
 }
 
 function isSAMBLable(url){
+    return false;
     return url.match("^https?://open\\.spotify\\.com/artist")
         || url.match("^https?://www\\.deezer\\.com/artist")
         || url.match("^https?://tidal\\.com/artist/")

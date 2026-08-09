@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          MusicBrainz Entity Images
-// @version       2026.6.25
+// @version       2026.8.9
 // @namespace     https://github.com/zabe40
 // @author        zabe
 // @description   Display images on Musicbrainz for artists, labels, places, and series.
@@ -170,7 +170,7 @@
 	                    urlObject.src = await wikimediaImageURL(url);
 	                    urlObject.name = "Wikimedia file";
 	                    urlObject.isImage = true;
-	                }else if(isSAMBLable(url)){
+	                }else if(isSAMBLable()){
 	                    let obj = await samblImageURL(url);
 	                    urlObject.src = obj.src;
 	                    urlObject.name = obj.provider + " profile";
@@ -211,12 +211,7 @@
 	}
 
 	function isSAMBLable(url){
-	    return url.match("^https?://open\\.spotify\\.com/artist")
-	        || url.match("^https?://www\\.deezer\\.com/artist")
-	        || url.match("^https?://tidal\\.com/artist/")
-	        || url.match("^https?://soundcloud\\.com")
-	        || url.match("^https?://open\\.qobuz\\.com/artist")
-	        || url.match("^https?://[^.]*.bandcamp.com/");
+	    return false;
 	}
 
 	function samblImageURL(url){
